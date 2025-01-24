@@ -78,15 +78,15 @@ frame = 4
 frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0, -28)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -14)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
 
 [node name="Marker2D4" type="Marker2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(0, 14)
 
 [node name="Marker2D5" type="Marker2D" parent="."]
-position = Vector2(0, 40)
+position = Vector2(0, 28)

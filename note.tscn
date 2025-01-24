@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cmp7pootehkdb" path="res://assets/sprites/noire.png" id="6_8m3f7"]
 [ext_resource type="Texture2D" uid="uid://cvcob5ukqm6jy" path="res://assets/sprites/animations/Croche.png" id="6_wegub"]
 [ext_resource type="Texture2D" uid="uid://step0o6uvm4o" path="res://assets/sprites/animations/doucle_croche_disparait.png" id="7_q35y0"]
-[ext_resource type="Texture2D" uid="uid://dmxho2fyc4ljj" path="res://assets/sprites/ronde.png" id="7_ycpoj"]
+[ext_resource type="Texture2D" uid="uid://dmxho2fyc4ljj" path="res://assets/sprites/Ronde.png" id="7_ycpoj"]
 [ext_resource type="Texture2D" uid="uid://bndv20k6nmte2" path="res://assets/sprites/animations/Double croche.png" id="9_5e8fm"]
 [ext_resource type="Texture2D" uid="uid://cuwx5yjp1msm1" path="res://assets/sprites/animations/noire_disparait.png" id="10_ormqm"]
 [ext_resource type="Texture2D" uid="uid://djgjk7bhg132a" path="res://assets/sprites/animations/Noire.png" id="12_lcaca"]
@@ -499,3 +499,5 @@ collision_mask = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 shape = SubResource("CircleShape2D_y01e5")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="Sprite2D" method="_on_area_2d_area_entered"]

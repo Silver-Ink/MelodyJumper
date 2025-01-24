@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxho2fyc4ljj"
-path="res://.godot/imported/Ronde.png-7d3daa8a7c43c3e19e3d79d18841a7f4.ctex"
+uid="uid://b8jp0iiacjt68"
+path="res://.godot/imported/line.png-bf9fb0972676915ba0a263b30a3171f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Ronde.png"
-dest_files=["res://.godot/imported/Ronde.png-7d3daa8a7c43c3e19e3d79d18841a7f4.ctex"]
+source_file="res://assets/sprites/line.png"
+dest_files=["res://.godot/imported/line.png-bf9fb0972676915ba0a263b30a3171f4.ctex"]
 
 [params]
 

@@ -15,7 +15,18 @@ run/main_scene="res://level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=2
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="notes"
+2d_physics/layer_3="section"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

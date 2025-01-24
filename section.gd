@@ -1,6 +1,7 @@
-class_name Section extends Sprite2D
+class_name Section extends Node2D
 
-var speed := 50
+var speed := 100
+var reset_position : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,3 +11,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.x -= speed * delta
+
+
+func replace_to_end():
+	position.x += reset_position
+	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var collisionner = area.get_parent()
+	if (area is ResetArea):
+		replace_to_end()

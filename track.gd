@@ -12,6 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+		
 
 
 
@@ -39,7 +40,9 @@ func instanciate_sections():
 		
 		section.position = origin.position
 		
-		section.position.x += i * width + width / 2.
+		var offset = i * width + width / 2.
+		section.position.x += offset
+		section.reset_position = length * width # + width / 2. 
 		
 	example_section.queue_free()
 	

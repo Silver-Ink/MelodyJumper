@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cifuhx5xc0wh4"]
+[gd_scene load_steps=3 format=3 uid="uid://ctc4es6p1afov"]
+
+[ext_resource type="Script" path="res://playing_area.gd" id="1_tsvas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3usce"]
-size = Vector2(34, 208)
+size = Vector2(50, 32)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_tsvas")
 
 [node name="CursorArea2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CursorArea2D"]
 scale = Vector2(0.2, 2.5)
 shape = SubResource("RectangleShape2D_3usce")
+
+[connection signal="area_entered" from="CursorArea2D" to="." method="_on_cursor_area_2d_area_entered"]

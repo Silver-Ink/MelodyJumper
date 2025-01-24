@@ -9,7 +9,7 @@ enum Type {
 }
 
 @export var type: Type
-@export var ligne: int
+@export var ligne: int = -1 # pas de ligne = pas de collision
 
 var height = "a0"
 
@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	if (ligne == -1): return
 	var collider = area.get_parent()
 	if (collider is PlayingArea):
 		NotePlayer.play_note(height, type)

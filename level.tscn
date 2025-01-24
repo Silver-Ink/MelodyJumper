@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://djhnrcgotvde4"]
+
+[ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
+
+[node name="level" type="Node2D"]
+
+[node name="Track" parent="." instance=ExtResource("1_kd5to")]
+position = Vector2(142, 360)
+
+[node name="Marker2D" type="Marker2D" parent="Track"]

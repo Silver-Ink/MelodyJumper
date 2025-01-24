@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmyt3j41tiwn"
-path="res://.godot/imported/Double silence.png-aa1c5b462f878f5c045038b50b2a9150.ctex"
+uid="uid://es8kaeskl6e"
+path="res://.godot/imported/double_silence.png-6f2f0f2de57c749c9c578bed9d2abb55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Double silence.png"
-dest_files=["res://.godot/imported/Double silence.png-aa1c5b462f878f5c045038b50b2a9150.ctex"]
+source_file="res://assets/sprites/double_silence.png"
+dest_files=["res://.godot/imported/double_silence.png-6f2f0f2de57c749c9c578bed9d2abb55.ctex"]
 
 [params]
 

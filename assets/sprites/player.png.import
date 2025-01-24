@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://03l7mnraoypq"
-path="res://.godot/imported/2 Croches.png-d5551ba816fef56aac1d2b7a63ca8f0e.ctex"
+uid="uid://bgvpqhkj7aa6i"
+path="res://.godot/imported/player.png-e1eaffe0873063c60a0d0b322e4d87d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/2 Croches.png"
-dest_files=["res://.godot/imported/2 Croches.png-d5551ba816fef56aac1d2b7a63ca8f0e.ctex"]
+source_file="res://assets/sprites/player.png"
+dest_files=["res://.godot/imported/player.png-e1eaffe0873063c60a0d0b322e4d87d9.ctex"]
 
 [params]
 

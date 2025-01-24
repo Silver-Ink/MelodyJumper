@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwfao0fl12sju"
-path="res://.godot/imported/Bécarre.png-3044e15bfccf03489ca72782c0bd7b2c.ctex"
+uid="uid://ds3kd0gmdsg6q"
+path="res://.godot/imported/becarre.png-bebb228ef473e1be51d58ad2dadd7f1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Bécarre.png"
-dest_files=["res://.godot/imported/Bécarre.png-3044e15bfccf03489ca72782c0bd7b2c.ctex"]
+source_file="res://assets/sprites/becarre.png"
+dest_files=["res://.godot/imported/becarre.png-bebb228ef473e1be51d58ad2dadd7f1f.ctex"]
 
 [params]
 

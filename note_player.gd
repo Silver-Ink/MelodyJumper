@@ -1,4 +1,4 @@
-class_name NotePlayer extends Node
+class_name NotePlayerClass extends Node
 
 
 const _regular_db = -20.0

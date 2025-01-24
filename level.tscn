@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
 [ext_resource type="PackedScene" uid="uid://ctc4es6p1afov" path="res://playing_area.tscn" id="2_ry1st"]
 [ext_resource type="PackedScene" uid="uid://bqqoiasgaecv" path="res://player.tscn" id="3_youjp"]
-[ext_resource type="Texture2D" path="res://noire.png" id="4_kbjct"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
+[ext_resource type="Texture2D" uid="uid://b8jp0iiacjt68" path="res://assets/sprites/line.png" id="6_8u8q2"]
 [ext_resource type="PackedScene" uid="uid://bnix8h5gbftq" path="res://note.tscn" id="7_6hd68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwo8r"]
@@ -13,10 +13,9 @@ size = Vector2(40, 161)
 [node name="level" type="Node2D"]
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
-length = 4
+length = 10
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
-position = Vector2(0.0599976, 0)
 
 [node name="PlayingArea" parent="." instance=ExtResource("2_ry1st")]
 position = Vector2(-77, 0)
@@ -25,26 +24,6 @@ position = Vector2(-77, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)
-
-[node name="Noire" type="Sprite2D" parent="."]
-position = Vector2(-37, 1)
-texture = ExtResource("4_kbjct")
-
-[node name="Noire2" type="Sprite2D" parent="."]
-position = Vector2(-37, 15)
-texture = ExtResource("4_kbjct")
-
-[node name="Noire3" type="Sprite2D" parent="."]
-position = Vector2(-37, 30)
-texture = ExtResource("4_kbjct")
-
-[node name="Noire4" type="Sprite2D" parent="."]
-position = Vector2(-37, -14)
-texture = ExtResource("4_kbjct")
-
-[node name="Noire5" type="Sprite2D" parent="."]
-position = Vector2(-37, -30)
-texture = ExtResource("4_kbjct")
 
 [node name="ResetArea" type="Area2D" parent="."]
 collision_layer = 6
@@ -56,3 +35,8 @@ position = Vector2(-298, 0.5)
 shape = SubResource("RectangleShape2D_mwo8r")
 
 [node name="Note" parent="." instance=ExtResource("7_6hd68")]
+position = Vector2(0, -3)
+
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(-77, 0)
+texture = ExtResource("6_8u8q2")

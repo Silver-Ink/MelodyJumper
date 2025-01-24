@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dslvfv7ry2kaw"]
+[gd_scene load_steps=7 format=3 uid="uid://dslvfv7ry2kaw"]
 
 [ext_resource type="PackedScene" path="res://track.tscn" id="1_kd5to"]
 [ext_resource type="PackedScene" path="res://playing_area.tscn" id="2_ry1st"]
 [ext_resource type="PackedScene" uid="uid://46fadsteltg8" path="res://player.tscn" id="3_youjp"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
-[ext_resource type="PackedScene" uid="uid://bnix8h5gbftq" path="res://note.tscn" id="7_6hd68"]
+[ext_resource type="PackedScene" uid="uid://ds1sntqk5jvug" path="res://note.tscn" id="7_6hd68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwo8r"]
 size = Vector2(40, 161)

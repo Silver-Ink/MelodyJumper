@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://step0o6uvm4o"
+path="res://.godot/imported/doucle_croche_disparait.png-ef0384928d56b80e599085088ae3aaa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/animations/doucle_croche_disparait.png"
+dest_files=["res://.godot/imported/doucle_croche_disparait.png-ef0384928d56b80e599085088ae3aaa3.ctex"]
 
 [params]
 

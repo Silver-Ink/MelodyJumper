@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://bndgjvq27amw0"
+path="res://.godot/imported/Bécarre Statique avec aura blanche.png-969ef021c2f98a17f9a25a4733e58ca8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/animations/Bécarre Statique avec aura blanche.png"
+dest_files=["res://.godot/imported/Bécarre Statique avec aura blanche.png-969ef021c2f98a17f9a25a4733e58ca8.ctex"]
 
 [params]
 

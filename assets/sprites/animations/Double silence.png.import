@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://dasqucg2lmluk"
+path="res://.godot/imported/Double silence.png-7015ad5ce7e7c17a44260b871ff32e85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/animations/Double silence.png"
+dest_files=["res://.godot/imported/Double silence.png-7015ad5ce7e7c17a44260b871ff32e85.ctex"]
 
 [params]
 

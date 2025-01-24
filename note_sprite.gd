@@ -1,4 +1,4 @@
-class_name Note extends Sprite2D
+class_name Note extends AnimatedSprite2D
 
 enum Type {
 	Ronde = 1,
@@ -17,15 +17,15 @@ var height = "a0"
 func _ready() -> void:
 	match type:
 		Type.Ronde:
-			set_texture(load("res://assets/sprites/Ronde.png"))
+			play("ronde_idle")
 		Type.Blanche:
-			set_texture(load("res://assets/sprites/blanche.png"))
+			play("blanche_idle")
 		Type.Noire:
-			set_texture(load("res://assets/sprites/noire.png"))
+			play("noire_idle")
 		Type.Croche:
-			set_texture(load("res://assets/sprites/Croche.png"))
+			play("croche_idle")
 		Type.DoubleCroche:
-			set_texture(load("res://assets/sprites/double croche.png"))
+			play("double_croche_idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

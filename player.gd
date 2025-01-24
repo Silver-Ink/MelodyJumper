@@ -7,6 +7,7 @@ var current_pos = 2
 var player_positions
 var min_pos
 var max_pos
+@onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 
 var SC_shot = preload("res://shot.tscn")
 
@@ -17,9 +18,10 @@ func _ready() -> void:
 	player_positions = get_children()
 	player_positions = player_positions.filter(func(node): return node is Marker2D)
 	player_positions.sort_custom(func(node1, node2): return (node1.position.y < node2.position.y))
-	
 	min_pos = 0
 	max_pos = player_positions.size()-1
+	animated_sprite_2d.play("idle")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,4 +51,5 @@ func _teleport_player(new_pos: int):
 	
 func _shot_natural():
 	var new_shot = SC_shot.instantiate()
+	animated_sprite_2d.play("shoot")
 	add_child(new_shot)

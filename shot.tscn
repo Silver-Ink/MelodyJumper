@@ -1,9 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc3m83mfd82j4"]
+[gd_scene load_steps=8 format=3 uid="uid://qcqx4vmxaldu"]
 
 [ext_resource type="Script" path="res://shot.gd" id="1_k2aca"]
+[ext_resource type="Texture2D" uid="uid://bndgjvq27amw0" path="res://assets/sprites/animations/Bécarre Statique avec aura blanche.png" id="2_sftme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iqfh"]
 size = Vector2(6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt1gv"]
+atlas = ExtResource("2_sftme")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx1mv"]
+atlas = ExtResource("2_sftme")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kolys"]
+atlas = ExtResource("2_sftme")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_foyqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt1gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx1mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kolys")
+}],
+"loop": true,
+"name": &"becarre_aura",
+"speed": 16.0
+}]
 
 [node name="shot" type="Node2D"]
 script = ExtResource("1_k2aca")
@@ -14,5 +44,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_4iqfh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_foyqn")
+animation = &"becarre_aura"
+frame_progress = 0.919175
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

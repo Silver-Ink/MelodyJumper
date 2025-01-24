@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://wldqg8k3fm05"
+path="res://.godot/imported/Demi Pause.png-62a2f558d899c772c3503e7c47c2813d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/animations/Demi Pause.png"
+dest_files=["res://.godot/imported/Demi Pause.png-62a2f558d899c772c3503e7c47c2813d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://dxv56sq61lbw6"
+path="res://.godot/imported/blanche_disparait.png-67fd62d93756384a6b35b705d1902344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/animations/blanche_disparait.png"
+dest_files=["res://.godot/imported/blanche_disparait.png-67fd62d93756384a6b35b705d1902344.ctex"]
 
 [params]
 

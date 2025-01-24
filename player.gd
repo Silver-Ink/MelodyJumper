@@ -1,4 +1,4 @@
-extends Node2D
+class_name Player extends Node2D
 
 
 var player_area
@@ -8,6 +8,8 @@ var player_positions
 var min_pos
 var max_pos
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
+
+var SC_shot = preload("res://shot.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +29,9 @@ func _process(delta: float) -> void:
 		_move_player(false)
 	elif (Input.is_action_just_pressed("ui_up")):
 		_move_player(true)
+	
+	if (Input.is_action_just_pressed("ui_accept")):
+		_shot_natural()
 
 func _move_player(moving_up: bool):
 	if ((moving_up && current_pos == min_pos) || (!moving_up && current_pos == max_pos)):
@@ -43,3 +48,7 @@ func _teleport_player(new_pos: int):
 	
 	player_area.position.y = player_positions[new_pos].position.y
 	current_pos = new_pos
+	
+func _shot_natural():
+	var new_shot = SC_shot.instantiate()
+	add_child(new_shot)

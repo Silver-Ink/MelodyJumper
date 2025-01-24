@@ -50,6 +50,10 @@ func _teleport_player(new_pos: int):
 	current_pos = new_pos
 	
 func _shot_natural():
-	var new_shot = SC_shot.instantiate()
 	animated_sprite_2d.play("shoot")
+	
+	var new_shot : Shot = SC_shot.instantiate()
+	var pos = animated_sprite_2d.global_position.y
+	new_shot.global_position.y = pos
+	
 	add_child(new_shot)

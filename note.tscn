@@ -1,16 +1,16 @@
-[gd_scene load_steps=74 format=3 uid="uid://ds1sntqk5jvug"]
+[gd_scene load_steps=74 format=3 uid="uid://bnix8h5gbftq"]
 
 [ext_resource type="Texture2D" uid="uid://c6k1amgij5nxx" path="res://assets/sprites/blanche.png" id="1_4pgx8"]
 [ext_resource type="Script" path="res://note_sprite.gd" id="1_cv88p"]
 [ext_resource type="Texture2D" uid="uid://dxv56sq61lbw6" path="res://assets/sprites/animations/blanche_disparait.png" id="1_x4qiw"]
-[ext_resource type="Texture2D" uid="uid://s8odeko0i3n1" path="res://assets/sprites/croche.png" id="2_03mtk"]
+[ext_resource type="Texture2D" uid="uid://s8odeko0i3n1" path="res://assets/sprites/Croche.png" id="2_03mtk"]
 [ext_resource type="Texture2D" uid="uid://df8smxyh3el5u" path="res://assets/sprites/animations/Blanche.png" id="3_yveau"]
 [ext_resource type="Texture2D" uid="uid://ctrixbkkeeth3" path="res://assets/sprites/animations/croche_disparait.png" id="4_ac5os"]
 [ext_resource type="Texture2D" uid="uid://co8b1bawyyhnw" path="res://assets/sprites/double_croche.png" id="5_x3xit"]
 [ext_resource type="Texture2D" uid="uid://cmp7pootehkdb" path="res://assets/sprites/noire.png" id="6_8m3f7"]
 [ext_resource type="Texture2D" uid="uid://cvcob5ukqm6jy" path="res://assets/sprites/animations/Croche.png" id="6_wegub"]
 [ext_resource type="Texture2D" uid="uid://step0o6uvm4o" path="res://assets/sprites/animations/doucle_croche_disparait.png" id="7_q35y0"]
-[ext_resource type="Texture2D" uid="uid://dmxho2fyc4ljj" path="res://assets/sprites/ronde.png" id="7_ycpoj"]
+[ext_resource type="Texture2D" uid="uid://dmxho2fyc4ljj" path="res://assets/sprites/Ronde.png" id="7_ycpoj"]
 [ext_resource type="Texture2D" uid="uid://bndv20k6nmte2" path="res://assets/sprites/animations/Double croche.png" id="9_5e8fm"]
 [ext_resource type="Texture2D" uid="uid://cuwx5yjp1msm1" path="res://assets/sprites/animations/noire_disparait.png" id="10_ormqm"]
 [ext_resource type="Texture2D" uid="uid://djgjk7bhg132a" path="res://assets/sprites/animations/Noire.png" id="12_lcaca"]
@@ -499,3 +499,5 @@ collision_mask = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 shape = SubResource("CircleShape2D_y01e5")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="Sprite2D" method="_on_area_2d_area_entered"]

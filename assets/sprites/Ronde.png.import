@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmxho2fyc4ljj"
-path="res://.godot/imported/ronde.png-902b0a824d93a221ef7085e88786fed2.ctex"
+path="res://.godot/imported/Ronde.png-7d3daa8a7c43c3e19e3d79d18841a7f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ronde.png"
-dest_files=["res://.godot/imported/ronde.png-902b0a824d93a221ef7085e88786fed2.ctex"]
+source_file="res://assets/sprites/Ronde.png"
+dest_files=["res://.godot/imported/Ronde.png-7d3daa8a7c43c3e19e3d79d18841a7f4.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 class_name Shot extends Node2D
 
-@export var speed := 100
+@export var speed := 200
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.

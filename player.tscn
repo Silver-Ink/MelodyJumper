@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://46fadsteltg8"]
+[gd_scene load_steps=12 format=3 uid="uid://46fadsteltg8"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_kbd8e"]
 [ext_resource type="Texture2D" uid="uid://bgvpqhkj7aa6i" path="res://assets/sprites/player.png" id="2_6id1y"]
@@ -11,21 +11,25 @@ size = Vector2(2, 4)
 atlas = ExtResource("2_6id1y")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ijsu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmxeo"]
 atlas = ExtResource("3_uq3de")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_evogt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_elbkg"]
 atlas = ExtResource("3_uq3de")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3jgpq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_15gdk"]
 atlas = ExtResource("3_uq3de")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hccbf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_muuxp"]
 atlas = ExtResource("3_uq3de")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njl5x"]
+atlas = ExtResource("3_uq3de")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pa4nw"]
 animations = [{
@@ -39,20 +43,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ijsu")
+"texture": SubResource("AtlasTexture_xmxeo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_evogt")
+"texture": SubResource("AtlasTexture_elbkg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3jgpq")
+"texture": SubResource("AtlasTexture_15gdk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hccbf")
+"texture": SubResource("AtlasTexture_muuxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njl5x")
 }],
 "loop": false,
 "name": &"shoot",
-"speed": 14.0
+"speed": 25.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -67,7 +74,7 @@ shape = SubResource("RectangleShape2D_v3i70")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player_Area2D"]
 sprite_frames = SubResource("SpriteFrames_pa4nw")
 animation = &"shoot"
-frame = 3
+frame = 4
 frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="."]

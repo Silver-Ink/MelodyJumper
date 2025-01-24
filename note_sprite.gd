@@ -17,15 +17,15 @@ var height = "a0"
 func _ready() -> void:
 	match type:
 		Type.Ronde:
-			set_texture(load("res://assets/sprites/Ronde.png"))
+			set_texture(load("res://assets/sprites/ronde.png"))
 		Type.Blanche:
 			set_texture(load("res://assets/sprites/blanche.png"))
 		Type.Noire:
 			set_texture(load("res://assets/sprites/noire.png"))
 		Type.Croche:
-			set_texture(load("res://assets/sprites/Croche.png"))
+			set_texture(load("res://assets/sprites/croche.png"))
 		Type.DoubleCroche:
-			set_texture(load("res://assets/sprites/double croche.png"))
+			set_texture(load("res://assets/sprites/double_croche.png"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

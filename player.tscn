@@ -50,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hccbf")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
 "speed": 10.0
 }]
@@ -67,7 +67,8 @@ shape = SubResource("RectangleShape2D_v3i70")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player_Area2D"]
 sprite_frames = SubResource("SpriteFrames_pa4nw")
 animation = &"shoot"
-frame_progress = 0.571449
+frame = 3
+frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -40)

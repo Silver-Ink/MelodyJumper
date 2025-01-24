@@ -51,4 +51,5 @@ func _teleport_player(new_pos: int):
 	
 func _shot_natural():
 	var new_shot = SC_shot.instantiate()
+	animated_sprite_2d.play("shoot")
 	add_child(new_shot)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbp2quxkoog52"
-path="res://.godot/imported/Carré sans bécarre.png-cbc5af47857c5a0e0291bd24d4fa3780.ctex"
+uid="uid://cg1lpovx5kjw0"
+path="res://.godot/imported/deux_croches.png-36a0eaba85b8d9588dfb0da45ad74dd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Carré sans bécarre.png"
-dest_files=["res://.godot/imported/Carré sans bécarre.png-cbc5af47857c5a0e0291bd24d4fa3780.ctex"]
+source_file="res://assets/sprites/deux_croches.png"
+dest_files=["res://.godot/imported/deux_croches.png-36a0eaba85b8d9588dfb0da45ad74dd8.ctex"]
 
 [params]
 

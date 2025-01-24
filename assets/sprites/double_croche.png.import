@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfp5ps5hkfofv"
-path="res://.godot/imported/2 Doubles Croches.png-f5a9a4d8bf34a937ea36112d0802e989.ctex"
+uid="uid://co8b1bawyyhnw"
+path="res://.godot/imported/double_croche.png-25151f37ef032e245555634adb8f4593.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/2 Doubles Croches.png"
-dest_files=["res://.godot/imported/2 Doubles Croches.png-f5a9a4d8bf34a937ea36112d0802e989.ctex"]
+source_file="res://assets/sprites/double_croche.png"
+dest_files=["res://.godot/imported/double_croche.png-25151f37ef032e245555634adb8f4593.ctex"]
 
 [params]
 

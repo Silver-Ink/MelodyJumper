@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s8odeko0i3n1"
-path="res://.godot/imported/croche.png-c8915552c59a7592f6548e8f8482ff7c.ctex"
+path="res://.godot/imported/Croche.png-a4033e3a930fa9f6784ca44a643b94e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/croche.png"
-dest_files=["res://.godot/imported/croche.png-c8915552c59a7592f6548e8f8482ff7c.ctex"]
+source_file="res://assets/sprites/Croche.png"
+dest_files=["res://.godot/imported/Croche.png-a4033e3a930fa9f6784ca44a643b94e1.ctex"]
 
 [params]
 

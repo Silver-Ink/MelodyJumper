@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqqoiasgaecv"]
+[gd_scene load_steps=3 format=3 uid="uid://cra8gqrx15o1i"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_kbd8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3i70"]
 size = Vector2(2, 4)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_kbd8e")
 
 [node name="Player_Area2D" type="Area2D" parent="."]
 
@@ -11,16 +14,16 @@ size = Vector2(2, 4)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_v3i70")
 
-[node name="Marker2D" type="Marker2D" parent="Player_Area2D"]
+[node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -40)
 
-[node name="Marker2D2" type="Marker2D" parent="Player_Area2D"]
+[node name="Marker2D2" type="Marker2D" parent="."]
 position = Vector2(0, -20)
 
-[node name="Marker2D3" type="Marker2D" parent="Player_Area2D"]
+[node name="Marker2D3" type="Marker2D" parent="."]
 
-[node name="Marker2D4" type="Marker2D" parent="Player_Area2D"]
+[node name="Marker2D4" type="Marker2D" parent="."]
 position = Vector2(0, 20)
 
-[node name="Marker2D5" type="Marker2D" parent="Player_Area2D"]
+[node name="Marker2D5" type="Marker2D" parent="."]
 position = Vector2(0, 40)

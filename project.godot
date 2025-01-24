@@ -25,6 +25,10 @@ window/size/mode=2
 2d_physics/layer_2="notes"
 2d_physics/layer_3="section"
 
+[autoload]
+
+NotePlayer="*res://note_player.gd"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -33,5 +33,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if (area is PlayerArea):
+	var collider = area.get_parent()
+	if (collider is Shot):
 		NotePlayer.play_note(height, type)

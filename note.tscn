@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnix8h5gbftq"]
+[gd_scene load_steps=3 format=3 uid="uid://bnix8h5gbftq"]
 
 [ext_resource type="Script" path="res://note_sprite.gd" id="1_cv88p"]
 

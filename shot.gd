@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent()
-	if (collider is Note)
+	if (collider is Note):
+		queue_free()

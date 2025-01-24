@@ -8,6 +8,7 @@
 script = ExtResource("1_kbd8e")
 
 [node name="Player_Area2D" type="Area2D" parent="."]
+script = ExtResource("1_4pv8l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Area2D"]
 scale = Vector2(2, 2)

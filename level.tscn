@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://djhnrcgotvde4"]
+[gd_scene load_steps=4 format=3 uid="uid://djhnrcgotvde4"]
 
 [ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
+[ext_resource type="PackedScene" uid="uid://cifuhx5xc0wh4" path="res://playing_area.tscn" id="2_ry1st"]
+[ext_resource type="PackedScene" uid="uid://cra8gqrx15o1i" path="res://player.tscn" id="3_youjp"]
 
 [node name="level" type="Node2D"]
 
@@ -8,3 +10,8 @@
 position = Vector2(142, 360)
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
+
+[node name="PlayingArea" parent="." instance=ExtResource("2_ry1st")]
+position = Vector2(80, 359)
+
+[node name="Player" parent="PlayingArea" instance=ExtResource("3_youjp")]

@@ -26,6 +26,9 @@ var t_position_duration : float = .12
 
 var level : Level
 
+var swipe_started = false
+var swipe_start = Vector2()
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -63,6 +66,18 @@ func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("ui_accept")):
 		if (shots_available > 0):
 			_shot_natural()
+	
+	if Input.is_action_pressed("LMB"):
+		swipe_started = true
+		swipe_start = get_global_mouse_position()
+	if Input.is_action_just_released("LMB") and swipe_started:
+		swipe_started = false
+		var swipe_end = get_global_mouse_position()
+		var swipe = swipe_end - swipe_start
+		if swipe.y == 0:
+			if shots_available > 0:
+				_shot_natural()
+		else: _move_player(swipe.y < 0)
 
 	if (t_position_active):
 		player_area.position = tween_position()

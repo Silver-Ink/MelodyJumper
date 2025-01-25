@@ -17,6 +17,8 @@ var beats = 4
 
 var game_over = false
 
+var line_to_height = {0: "c4", 1: "e4", 2: "g4", 3: "b5", 4: "d5"}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for note in _available_notes:

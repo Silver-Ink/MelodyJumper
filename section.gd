@@ -5,9 +5,21 @@ var is_first = false
 var speed := 100
 var reset_position : int
 
+var SC_note := preload("res://note.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var number_of_notes_gerenated: int = randi() % 3
+	for i in range(number_of_notes_gerenated):
+		var super_new_note: Node2D = SC_note.instantiate()
+		var new_note: Note = super_new_note.get_children()[0]
+		new_note.type = 2**(randi() % 5)
+		var line: int = 4 - (randi() % 5)
+		new_note.height = NotePlayer.line_to_height[line]
+		line += 1
+		super_new_note.position.x = randi() % 35 * (1 if randi() % 2 == 0 else -1)
+		super_new_note.position.y = (line - 3) * -14 - 3
+		add_child(super_new_note)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

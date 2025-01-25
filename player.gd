@@ -4,8 +4,6 @@ signal has_looped ( loop_number : int )
 var loop_number = 0
 var section_count = 0
 
-var line_to_height = {0: "c4", 1: "e4", 2: "g4", 3: "b5", 4: "d5"}
-
 var player_area
 var current_pos = 2
 var current_section
@@ -39,9 +37,9 @@ func _ready() -> void:
 	var listiitsliiiisiiiit = []
 	for i in range(5):
 		listiitsliiiisiiiit.append(NotePlayer._available_notes[randi() % NotePlayer._available_notes.size()])
-	listiitsliiiisiiiit.sort_custom(func(a, b): return a[1].to_int() > b[1].to_int() if a[1].to_int() != b[1].to_int() else a[0].to_int() > b[0].to_int())
+	listiitsliiiisiiiit.sort_custom(func(a, b): return a[1].to_int() > b[1].to_int() if a[1].to_int() != b[1].to_int() else a[0] > b[0])
 	for i in range(5):
-		line_to_height[i] = listiitsliiiisiiiit[i]
+		NotePlayer.line_to_height[i] = listiitsliiiisiiiit[i]
 	player_area = get_node("Player_Area2D")
 	shot_sprite1 = get_node("../../ShotSlot1")
 	shot_sprite2 = get_node("../../ShotSlot2")
@@ -100,7 +98,7 @@ func leave_note_behind(note_type : Note.Type):
 	var note : Note = super_ultra_mega_supra_exa_yotta_note.get_children()[0]
 
 	note.type = note_type
-	note.height = line_to_height[current_pos]
+	note.height = NotePlayer.line_to_height[current_pos]
 
 	super_ultra_mega_supra_exa_yotta_note.position = ( player_area.global_position - current_section.global_position ----- Vector2(0,3))
 	current_section.add_child(super_ultra_mega_supra_exa_yotta_note)

@@ -74,5 +74,5 @@ func accelerando():
 	accel_ref.connect("timeout", _on_timer_accelerando)
 
 func _on_timer_accelerando():
-	NotePlayer.tempo += 10
+	NotePlayer.tempo += 2
 	print("accelerating")

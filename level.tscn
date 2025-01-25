@@ -16,7 +16,7 @@ size = Vector2(40, 161)
 script = ExtResource("1_jr6dl")
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
-position = Vector2(0, 10)
+position = Vector2(-32, 10)
 length = 20
 
 [node name="Marker2D" type="Marker2D" parent="Track"]

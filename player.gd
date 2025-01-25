@@ -119,7 +119,7 @@ func _shot_natural():
 	animation_player.play("pulse")
 
 	var new_shot : Shot = SC_shot.instantiate()
-	var pos = animated_sprite_2d.global_position.y
+	var pos = animated_sprite_2d.global_position.y - global_position.y
 	new_shot.global_position.y = pos
 
 	add_child(new_shot)

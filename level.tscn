@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djhnrcgotvde4"]
+[gd_scene load_steps=10 format=3 uid="uid://djhnrcgotvde4"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_jr6dl"]
 [ext_resource type="PackedScene" uid="uid://bbqglccf55snx" path="res://track.tscn" id="1_kd5to"]
@@ -16,6 +16,7 @@ size = Vector2(40, 161)
 script = ExtResource("1_jr6dl")
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
+position = Vector2(0, 10)
 length = 20
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
@@ -45,12 +46,12 @@ shape = SubResource("RectangleShape2D_mwo8r")
 position = Vector2(-49, -76)
 
 [node name="ShotSlot1" type="Sprite2D" parent="."]
-position = Vector2(110, 70)
+position = Vector2(105, 65)
 scale = Vector2(2, 2)
 texture = ExtResource("7_85om2")
 
 [node name="ShotSlot2" type="Sprite2D" parent="."]
-position = Vector2(139, 70)
+position = Vector2(134, 65)
 scale = Vector2(2, 2)
 texture = ExtResource("7_85om2")
 

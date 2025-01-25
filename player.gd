@@ -67,12 +67,12 @@ func _process(delta: float) -> void:
 		if (shots_available > 0):
 			_shot_natural()
 	
-	if Input.is_action_pressed("LMB"):
+	if Input.is_action_just_pressed("LMB"):
 		swipe_started = true
-		swipe_start = get_global_mouse_position()
+		swipe_start = get_window().get_mouse_position()
 	if Input.is_action_just_released("LMB") and swipe_started:
 		swipe_started = false
-		var swipe_end = get_global_mouse_position()
+		var swipe_end = get_window().get_mouse_position()
 		var swipe = swipe_end - swipe_start
 		if swipe.y == 0:
 			if shots_available > 0:

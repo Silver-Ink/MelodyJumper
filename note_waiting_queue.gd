@@ -113,5 +113,5 @@ func _on_player_has_looped(loop_number: int) -> void:
 	if (loop_number != 0):
 		regenerate_queue()
 		_update_queue_ui()
-	if (loop_number == 4): $"../Track".get_child(5).add_child(SC_accel.instantiate())
+	if (loop_number == 4): $"../Track".get_child(5).add_child.call_deferred(SC_accel.instantiate())
 

@@ -6,6 +6,7 @@ const _fadeout_db = -80.0
 
 const _available_notes = ["a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "b0", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "e1", "e2", "e3", "e4", "e5", "e6", "e7", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "g1", "g2", "g3", "g4", "g5", "g6", "g7"]
 
+var accel_ref: Timer
 
 var _available_notes_dict = {}
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 func init():
 	game_over = false
 	tempo = 60
+	accel_ref = null
 
 # Loads preemptively the sound file for a note
 func _add_note_as_available(note_type: String):
@@ -63,3 +65,14 @@ func play_note(height: String, type: Note.Type):
 
 func _tempo_2_note_time(note_type: Note.Type) -> float:
 	return ((float(tempo) / 60) * beats) / note_type
+
+func accelerando():
+	accel_ref = Timer.new()
+	add_child(accel_ref)
+	accel_ref.wait_time = NotePlayer.beats
+	accel_ref.start()
+	accel_ref.connect("timeout", _on_timer_accelerando)
+
+func _on_timer_accelerando():
+	NotePlayer.tempo += 10
+	print("accelerating")

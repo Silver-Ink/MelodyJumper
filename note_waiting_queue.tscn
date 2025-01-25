@@ -4,28 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://ddk7pxp8f7vin" path="res://icon.svg" id="1_8whq1"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(100, 100)
 script = ExtResource("1_3eb4d")
 
 [node name="NextNote" type="Sprite2D" parent="."]
-position = Vector2(-83, -83)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("1_8whq1")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-38, -81)
+position = Vector2(45, 0)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(-15, -81)
+position = Vector2(68, 0)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(12, -81)
+position = Vector2(95, 0)
 
 [node name="placeholder" type="Sprite2D" parent="."]
-position = Vector2(-12, -82)
+position = Vector2(71, 0)
 scale = Vector2(0.771, 0.16)
 texture = ExtResource("1_8whq1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(60, -12)
-zoom = Vector2(6, 6)

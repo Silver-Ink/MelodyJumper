@@ -46,6 +46,12 @@ func instanciate_sections():
 
 		if (i == 0):
 			section.is_first = true
+			
+			var sprite = Sprite2D.new()
+			sprite.texture = load("res://assets/sprites/section_bar.png")
+			sprite.scale.y = 100 
+			sprite.z_index = -4000
+			section.add_child(sprite)
 		
 	example_section.queue_free()
 	

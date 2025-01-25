@@ -67,7 +67,7 @@ func _update_queue_ui():
 		queue[i+1].position = queue_positions[i].position
 		i+=1
 
-func place_note() -> Note.Type :
+func place_note():
 	if (queue.size() == 0 or not can_use_note):
 		return 0
 	

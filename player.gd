@@ -2,6 +2,7 @@ class_name Player extends Node2D
 
 signal has_looped ( loop_number : int )
 var loop_number = 0
+var section_count = 0
 
 var line_to_height = {0: "c4", 1: "e4", 2: "g4", 3: "b5", 4: "d5"}
 
@@ -12,6 +13,10 @@ var current_section
 var player_positions
 var min_pos
 var max_pos
+
+var shots_available = 2
+var shot_sprite1
+var shot_sprite2
 
 var has_shield := false : set = _set_has_shield
 
@@ -31,6 +36,8 @@ var SC_note = preload("res://note.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player_area = get_node("Player_Area2D")
+	shot_sprite1 = get_node("../../ShotSlot1")
+	shot_sprite2 = get_node("../../ShotSlot2")
 
 	player_positions = get_children()
 	player_positions = player_positions.filter(func(node): return node is Marker2D)
@@ -48,7 +55,8 @@ func _process(delta: float) -> void:
 		_move_player(true)
 
 	if (Input.is_action_just_pressed("ui_accept")):
-		_shot_natural()
+		if (shots_available > 0):
+			_shot_natural()
 
 	if (t_position_active):
 		player_area.position = tween_position()
@@ -92,6 +100,14 @@ func leave_note_behind(note_type : Note.Type):
 
 
 func _shot_natural():
+	shots_available -= 1
+	
+	if (shots_available == 1):
+		if is_instance_valid(shot_sprite1):
+			shot_sprite1.modulate.a = 0.5
+	else:
+		if is_instance_valid(shot_sprite2):
+			shot_sprite2.modulate.a = 0.5
 	animated_sprite_2d.play("shoot")
 	animation_player.play("pulse")
 
@@ -119,10 +135,20 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 			else:
 				_gameover()
 	elif (collider is Section):
+		section_count += 1
+		
 		current_section = collider
 		if (current_section.is_first):
 			has_looped.emit(loop_number)
-			loop_number+=1
+			
+			loop_number += 1
+			shots_available = 2
+			
+			if is_instance_valid(shot_sprite1):
+				shot_sprite1.modulate.a = 1
+			if is_instance_valid(shot_sprite2):
+				shot_sprite2.modulate.a = 1
+				
 
 
 func _gameover():

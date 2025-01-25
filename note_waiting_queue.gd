@@ -17,6 +17,7 @@ var queue_positions
 var can_use_note = true
 
 var SC_note = preload("res://note.tscn")
+var SC_accel = preload("res://accelerando.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -99,3 +100,5 @@ func _on_player_has_looped(loop_number: int) -> void:
 	if (loop_number != 0):
 		regenerate_queue()
 		_update_queue_ui()
+	if (loop_number == 4): $"../Track".get_child(5).add_child(SC_accel.instantiate())
+	

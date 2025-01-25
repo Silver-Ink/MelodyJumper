@@ -3,6 +3,8 @@ extends Node2D
 const _visible_queue_size = 3
 const _queue_size = 10
 
+const _next_note_cooldown = 1.0
+
 const _short_notes_weight = 0.6
 const _short_medium_notes_weight = 0.9
 
@@ -26,14 +28,14 @@ func _ready() -> void:
 	
 	regenerate_queue()
 	
-	spawn_queue_ui()
+	_update_queue_ui()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	i+=1
-	if (i % 100 == 0):
-		next_queue_ui()
+	if (i % 200 == 0):
+		place_note()
 	pass
 
 func regenerate_queue():
@@ -57,8 +59,7 @@ func regenerate_queue():
 		queue.append(note_scene)
 		add_child(note_scene)
 
-
-func spawn_queue_ui():
+func _update_queue_ui():
 	if queue.size() == 0:
 		return
 		
@@ -66,15 +67,25 @@ func spawn_queue_ui():
 	
 	var i = 0
 	while (i < _visible_queue_size && i < queue.size()-1):
-		print(i)
 		queue[i+1].position = queue_positions[i].position
 		i+=1
 
-func next_queue_ui():
+func place_note() -> Note.Type :
 	if queue.size() == 0:
-		return
-		
+		return 0
+	
+	next_note.modulate = Color.RED # placeholder for anim
+	
+	# Freeing next note sprite and keeping its value for return
 	var note_to_remove = queue.pop_front()
+	var note_type = note_to_remove.get_children()[0].type
 	note_to_remove.queue_free()
 	
-	spawn_queue_ui()
+	await get_tree().create_timer(_next_note_cooldown).timeout
+	
+	next_note.modulate = Color.WHITE
+	
+	_update_queue_ui()
+	
+	return note_type
+	

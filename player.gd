@@ -57,10 +57,11 @@ func _process(delta: float) -> void:
 func _move_player(moving_up: bool):
 	if ((moving_up && current_pos == min_pos) || (!moving_up && current_pos == max_pos)):
 		return
-
-	var note_type = $"../../NoteQueue".place_note()
-	if note_type != 0:
-		leave_note_behind(note_type)
+	
+	if (is_instance_valid(current_section)):
+		var note_type = $"../../NoteQueue".place_note()
+		if (note_type != 0):
+			leave_note_behind(note_type)
 
 	if (moving_up):
 		_set_player_position(current_pos-1)
@@ -109,13 +110,16 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 	if (collider is Fermata):
 		has_shield = true
 	elif (collider is Note):
-		if (has_shield):
-			animation_player.play("pulse")
-			has_shield = false
-		else:
-			_gameover()
+		if (collider.has_collision):
+			if (has_shield):
+				animation_player.play("pulse")
+				has_shield = false
+			else:
+				_gameover()
 	elif (collider is Section):
 		current_section = collider
+		if (current_section.is_first):
+			pass #TODO
 
 
 func _gameover():

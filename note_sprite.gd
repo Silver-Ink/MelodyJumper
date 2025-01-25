@@ -12,6 +12,9 @@ enum Type {
 
 var height = "c3"
 
+var frames = 0
+var has_collision = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	match type:
@@ -28,7 +31,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (frames > 100):
+		has_collision = true
+	else:
+		frames+=1
 
 func _disapear():
 	match type:
@@ -47,6 +53,9 @@ func _disapear():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	if not has_collision:
+		return
+	
 	var collider = area.get_parent()
 	if (collider is PlayingArea):
 		NotePlayer.play_note(height, type)

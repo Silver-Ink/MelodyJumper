@@ -1,5 +1,7 @@
 class_name Section extends Node2D
 
+var is_first = false
+
 var speed := 100
 var reset_position : int
 

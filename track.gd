@@ -42,7 +42,10 @@ func instanciate_sections():
 		
 		var offset = i * width + width / 2.
 		section.position.x += offset
-		section.reset_position = length * width # + width / 2. 
+		section.reset_position = length * width # + width / 2.
+
+		if (i == 0):
+			section.is_first = true
 		
 	example_section.queue_free()
 	

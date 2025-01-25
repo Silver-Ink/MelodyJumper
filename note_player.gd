@@ -50,10 +50,8 @@ func play_note(height: String, type: Note.Type):
 	# Handling note fadeout with a tween
 	var tween = create_tween()
 	
-	var hold_time:= _tempo_2_note_time(type)
-	
-	tween.tween_property(audio_player, "volume_db", _regular_db, hold_time)
-	tween.tween_property(audio_player, "volume_db", _fadeout_db, hold_time / 4).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(audio_player, "volume_db", _regular_db, _tempo_2_note_time(type))
+	tween.tween_property(audio_player, "volume_db", _fadeout_db, 0.25).set_trans(Tween.TRANS_CIRC)
 	tween.tween_callback(audio_player.queue_free)
 
 func _tempo_2_note_time(note_type: Note.Type) -> float:

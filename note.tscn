@@ -484,6 +484,7 @@ animations = [{
 radius = 0.0181818
 
 [node name="Note" type="Node2D"]
+z_index = 4096
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g80tu")

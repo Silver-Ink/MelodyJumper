@@ -90,6 +90,8 @@ position = Vector2(0, 3)
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_8edl2")
 animation = &"shine"
+frame = 6
+frame_progress = 1.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.927

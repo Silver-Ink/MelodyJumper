@@ -8,7 +8,7 @@ enum Type {
 	DoubleCroche = 16
 }
 
-@export var type: Type
+@export var type: Type = Type.DoubleCroche
 @export var ligne: int = -1 # pas de ligne = pas de collision
 
 var height = "c3"

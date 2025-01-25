@@ -10,6 +10,13 @@ var max_pos
 
 var has_shield := false : set = _set_has_shield
 
+var t_position_active := false
+var t_position_start : Vector2
+var t_position_dest : Vector2
+var t_position_timer : float = 0.
+var t_position_duration : float = .12
+
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 
 var SC_shot = preload("res://shot.tscn")
@@ -35,22 +42,31 @@ func _process(delta: float) -> void:
 	
 	if (Input.is_action_just_pressed("ui_accept")):
 		_shot_natural()
+		
+	if (t_position_active):
+		player_area.position = tween_position()
+		t_position_timer += delta
+		if (t_position_timer > t_position_duration):
+			t_position_active = false
 
 func _move_player(moving_up: bool):
 	if ((moving_up && current_pos == min_pos) || (!moving_up && current_pos == max_pos)):
 		return
 	
 	if (moving_up):
-		_teleport_player(current_pos-1)
+		_set_player_position(current_pos-1)
 	else:
-		_teleport_player(current_pos+1)
+		_set_player_position(current_pos+1)
 
-func _teleport_player(new_pos: int):
+func _set_player_position(new_pos: int):
 	if new_pos < 0 or new_pos >= player_positions.size():
 		return
 	
-	player_area.position.y = player_positions[new_pos].position.y
+	t_position_start = player_area.position
+	t_position_dest = player_positions[new_pos].position
 	current_pos = new_pos
+	t_position_active = true
+	t_position_timer = 0.
 	
 func _shot_natural():
 	animated_sprite_2d.play("shoot")
@@ -81,3 +97,12 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 func _gameover():
 	print("perdu")
 	queue_free()
+	
+func tween_position():
+	return Tween.interpolate_value(
+				t_position_start,
+				t_position_dest - t_position_start,
+				t_position_timer,
+				t_position_duration,
+				Tween.TRANS_QUINT,
+				Tween.EASE_OUT )

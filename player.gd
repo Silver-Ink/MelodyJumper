@@ -130,7 +130,7 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent()
 	if (collider is Fermata):
 		has_shield = true
-	elif (collider is Note):
+	elif (collider is Note):	
 		if (collider.has_collision):
 			if (has_shield):
 				animation_player.play("pulse")

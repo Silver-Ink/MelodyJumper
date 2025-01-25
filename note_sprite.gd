@@ -31,7 +31,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (frames > 100):
+	if (frames > 10):
 		has_collision = true
 	else:
 		frames+=1

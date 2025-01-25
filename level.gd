@@ -10,6 +10,7 @@ func resart_game():
 	var new_level = SC_level.instantiate()
 	get_tree().root.add_child.call_deferred(new_level)
 	queue_free.call_deferred()
+	NotePlayer.init()
 	
 func game_over():
 	var end = SC_fin.instantiate()

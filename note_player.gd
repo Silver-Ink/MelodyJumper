@@ -9,8 +9,6 @@ const _available_notes = ["a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "b0", 
 
 var _available_notes_dict = {}
 
-var i = 60 #TEMP
-
 # change the following dynamically to alter note lengths
 var tempo = 60
 var beats = 4
@@ -23,6 +21,11 @@ var line_to_height = {0: "c4", 1: "e4", 2: "g4", 3: "b5", 4: "d5"}
 func _ready() -> void:
 	for note in _available_notes:
 		_add_note_as_available(note)
+	init()
+		
+func init():
+	game_over = false
+	tempo = 60
 
 # Loads preemptively the sound file for a note
 func _add_note_as_available(note_type: String):

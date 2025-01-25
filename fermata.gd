@@ -19,8 +19,6 @@ func _process(delta: float) -> void:
 	var offset_y = sin(animate_timer * animate_speed) * animate_amplitude
 	animated_sprite_2d.offset.x = offset_y
 	
-	#DEBUG
-	global_position.x -= delta * 30
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

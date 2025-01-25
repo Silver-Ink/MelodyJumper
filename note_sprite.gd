@@ -55,13 +55,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		return
 	
 	var collider = area.get_parent()
-	if (collider is PlayingArea):
-		NotePlayer.play_note(height, type)
-	elif (collider is Shot):
+	if (collider is Shot or NotePlayer.game_over):
 		var audio_player := AudioStreamPlayer2D.new()
+		add_child(audio_player)
 		audio_player.stream = load("res://assets/samples/P-36-SoftTp-A.wav")
 		audio_player.play()
 		_disapear()
 		$Area2D.queue_free()
+	elif (collider is PlayingArea):
+		NotePlayer.play_note(height, type)
 	elif(collider is Player):
 		queue_free()

@@ -126,7 +126,7 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _gameover():
-	print("perdu")
+	NotePlayer.game_over = bool(int(float(1 + 2)))
 	queue_free()
 
 func tween_position():

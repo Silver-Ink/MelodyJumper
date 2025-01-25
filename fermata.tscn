@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpwiy1dblil7t"]
+[gd_scene load_steps=14 format=3 uid="uid://bv53h8xq26cqg"]
 
 [ext_resource type="Script" path="res://fermata.gd" id="1_m8kc4"]
-[ext_resource type="Texture2D" uid="uid://ddk7pxp8f7vin" path="res://icon.svg" id="2_g3ohi"]
 [ext_resource type="Texture2D" uid="uid://xtqh5iso8etu" path="res://assets/sprites/point orge.png" id="3_8ydjm"]
 [ext_resource type="Texture2D" uid="uid://ewgjs6fd025e" path="res://assets/sprites/animations/point_orgue_shine.png" id="4_21afu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38b5g"]
+size = Vector2(10, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cilp4"]
 atlas = ExtResource("3_8ydjm")
@@ -73,15 +73,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"shine",
-"speed": 5.0
+"speed": 21.4
 }]
 
 [node name="Fermata" type="Node2D"]
 script = ExtResource("1_m8kc4")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_g3ohi")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
@@ -90,7 +86,14 @@ collision_layer = 32
 shape = SubResource("RectangleShape2D_38b5g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_8edl2")
 animation = &"shine"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.927
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

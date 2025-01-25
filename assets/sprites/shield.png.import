@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s8odeko0i3n1"
-path="res://.godot/imported/Croche.png-a4033e3a930fa9f6784ca44a643b94e1.ctex"
+uid="uid://dvtoj3asgtj61"
+path="res://.godot/imported/shield.png-0771fff13ae6958b60fbbbbf9f303cee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Croche.png"
-dest_files=["res://.godot/imported/Croche.png-a4033e3a930fa9f6784ca44a643b94e1.ctex"]
+source_file="res://assets/sprites/shield.png"
+dest_files=["res://.godot/imported/shield.png-0771fff13ae6958b60fbbbbf9f303cee.ctex"]
 
 [params]
 

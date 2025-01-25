@@ -81,10 +81,8 @@ func _shot_natural():
 	
 func _set_has_shield(value : bool):
 	has_shield = value
-	$Player_Area2D/Sprite2D.visible = value
-	$Player_Area2D/Sprite2D2.visible = value
-	$Player_Area2D/Sprite2D3.visible = value
-
+	$Player_Area2D/Shield.visible = value
+	
 func _on_player_area_2d_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent()
 	if (collider is Fermata):

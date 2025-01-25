@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_kbd8e"]
 [ext_resource type="Texture2D" uid="uid://bgvpqhkj7aa6i" path="res://assets/sprites/player.png" id="2_6id1y"]
-[ext_resource type="Texture2D" uid="uid://ddk7pxp8f7vin" path="res://icon.svg" id="2_gwt2c"]
 [ext_resource type="Texture2D" uid="uid://27wrt4udsbs" path="res://assets/sprites/animations/Player Shooting.png" id="3_uq3de"]
+[ext_resource type="Texture2D" uid="uid://dvtoj3asgtj61" path="res://assets/sprites/shield.png" id="4_dhuos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3i70"]
 size = Vector2(2, 4)
@@ -63,6 +63,21 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="Animation" id="Animation_lk7le"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_Area2D/AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ad4bt"]
 resource_name = "pulse"
 length = 0.2
@@ -77,21 +92,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.21679, 1.21679), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_lk7le"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player_Area2D/AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vws60"]
@@ -117,25 +117,9 @@ frame = 4
 frame_progress = 1.0
 offset = Vector2(0.5, -0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player_Area2D"]
+[node name="Shield" type="Sprite2D" parent="Player_Area2D"]
 visible = false
-position = Vector2(16, 0)
-scale = Vector2(0.03125, 0.1875)
-texture = ExtResource("2_gwt2c")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Player_Area2D"]
-visible = false
-position = Vector2(12, 15)
-rotation = 0.709603
-scale = Vector2(0.0336025, 0.104057)
-texture = ExtResource("2_gwt2c")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Player_Area2D"]
-visible = false
-position = Vector2(12, -15)
-rotation = -0.710349
-scale = Vector2(0.0336025, 0.104057)
-texture = ExtResource("2_gwt2c")
+texture = ExtResource("4_dhuos")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -28)

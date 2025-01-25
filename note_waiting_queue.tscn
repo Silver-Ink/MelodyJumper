@@ -8,18 +8,24 @@ position = Vector2(100, 100)
 script = ExtResource("1_3eb4d")
 
 [node name="NextNote" type="Sprite2D" parent="."]
+position = Vector2(-83, -83)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("1_8whq1")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(255, 0)
+position = Vector2(-38, -81)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(455, 0)
+position = Vector2(-15, -81)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(655, 0)
+position = Vector2(12, -81)
 
 [node name="placeholder" type="Sprite2D" parent="."]
-position = Vector2(469.5, 0)
-scale = Vector2(4.82031, 1)
+position = Vector2(-12, -82)
+scale = Vector2(0.771, 0.16)
 texture = ExtResource("1_8whq1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(60, -12)
+zoom = Vector2(6, 6)

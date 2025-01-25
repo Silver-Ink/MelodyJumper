@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://ewgjs6fd025e"
+path="res://.godot/imported/point_orgue_shine.png-bfb98459a14bbd6b544c7db72bcd68be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/animations/point_orgue_shine.png"
+dest_files=["res://.godot/imported/point_orgue_shine.png-bfb98459a14bbd6b544c7db72bcd68be.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27wrt4udsbs"
-path="res://.godot/imported/Player Shooting.png-a4ed4ac7d89a47582cb481ce4f1c068f.ctex"
+uid="uid://rrvw3y7u36fn"
+path="res://.godot/imported/MelodyJumper intro sprite sheet.png-40bf8652d31992c9b10ea936d9f7fa1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/animations/Player Shooting.png"
-dest_files=["res://.godot/imported/Player Shooting.png-a4ed4ac7d89a47582cb481ce4f1c068f.ctex"]
+source_file="res://assets/intro/MelodyJumper intro sprite sheet.png"
+dest_files=["res://.godot/imported/MelodyJumper intro sprite sheet.png-40bf8652d31992c9b10ea936d9f7fa1e.ctex"]
 
 [params]
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://00eh2tjvvlc"]
+
+[ext_resource type="Script" path="res://note_waiting_queue.gd" id="1_3eb4d"]
+[ext_resource type="Texture2D" uid="uid://ddk7pxp8f7vin" path="res://icon.svg" id="1_8whq1"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(100, 100)
+script = ExtResource("1_3eb4d")
+
+[node name="NextNote" type="Sprite2D" parent="."]
+texture = ExtResource("1_8whq1")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(255, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(455, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(655, 0)
+
+[node name="placeholder" type="Sprite2D" parent="."]
+position = Vector2(469.5, 0)
+scale = Vector2(4.82031, 1)
+texture = ExtResource("1_8whq1")

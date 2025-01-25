@@ -1,5 +1,7 @@
 class_name Player extends Node2D
 
+signal has_looped ( loop_number : int )
+var loop_number = 0
 
 var line_to_height = {0: "c4", 1: "e4", 2: "g4", 3: "b5", 4: "d5"}
 
@@ -119,7 +121,8 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 	elif (collider is Section):
 		current_section = collider
 		if (current_section.is_first):
-			pass #TODO
+			has_looped.emit(loop_number)
+			loop_number+=1
 
 
 func _gameover():

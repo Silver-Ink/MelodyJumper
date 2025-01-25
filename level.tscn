@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dslvfv7ry2kaw"]
 
-[ext_resource type="PackedScene" uid="uid://bbqglccf55snx" path="res://track.tscn" id="1_kd5to"]
-[ext_resource type="PackedScene" path="res://playing_area.tscn" id="2_ry1st"]
+[ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
+[ext_resource type="PackedScene" uid="uid://ctc4es6p1afov" path="res://playing_area.tscn" id="2_ry1st"]
 [ext_resource type="PackedScene" uid="uid://46fadsteltg8" path="res://player.tscn" id="3_youjp"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
 [ext_resource type="Texture2D" uid="uid://b8jp0iiacjt68" path="res://assets/sprites/line.png" id="6_8u8q2"]
-[ext_resource type="PackedScene" path="res://note_waiting_queue.tscn" id="7_pwarf"]
+[ext_resource type="PackedScene" uid="uid://00eh2tjvvlc" path="res://note_waiting_queue.tscn" id="7_pwarf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwo8r"]
 size = Vector2(40, 161)
@@ -13,7 +13,7 @@ size = Vector2(40, 161)
 [node name="level" type="Node2D"]
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
-length = 10
+length = 20
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
 
@@ -40,3 +40,5 @@ texture = ExtResource("6_8u8q2")
 
 [node name="NoteQueue" parent="." instance=ExtResource("7_pwarf")]
 position = Vector2(-145, -74)
+
+[connection signal="has_looped" from="PlayingArea/Player" to="NoteQueue" method="_on_player_has_looped"]

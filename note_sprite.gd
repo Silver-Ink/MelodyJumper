@@ -11,7 +11,7 @@ enum Type {
 @export var type: Type
 @export var ligne: int = -1 # pas de ligne = pas de collision
 
-var height = "a0"
+var height = "c3"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,7 +29,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	
+	
+	#DEBUG
+	get_parent().position.x -= delta * 30
+
+func _disapear():
+	match type:
+		Type.Ronde:
+			play("ronde_disp")
+		Type.Blanche:
+			play("blanche_disp")
+		Type.Noire:
+			play("noire_disp")
+		Type.Croche:
+			play("croche_disp")
+		Type.DoubleCroche:
+			play("double_croche_disp")
+	animation_finished.connect(queue_free)
+	
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -38,5 +56,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (collider is PlayingArea):
 		NotePlayer.play_note(height, type)
 	elif (collider is Shot):
+		NotePlayer.play_note(height, type)
+		_disapear()
+		$Area2D.queue_free()
+	elif(collider is Player):
 		queue_free()
-		

@@ -1,0 +1,28 @@
+class_name Fermata extends Node2D
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+var animate_timer := 0.
+var animate_amplitude := 13
+var animate_speed := 4.
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	animate_timer+= delta
+	sprite_2d.offset.y = (sin(animate_timer * animate_speed) * animate_amplitude)
+	
+	
+	#DEBUG
+	global_position.x -= delta * 30
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var collider = area.get_parent()
+	if (collider is Player):
+		queue_free()

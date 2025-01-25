@@ -490,12 +490,13 @@ sprite_frames = SubResource("SpriteFrames_g80tu")
 animation = &"ronde_spawn"
 frame = 4
 frame_progress = 1.0
+offset = Vector2(-0.5, 0)
 script = ExtResource("1_cv88p")
 type = 1
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 collision_layer = 2
-collision_mask = 24
+collision_mask = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 shape = SubResource("CircleShape2D_y01e5")

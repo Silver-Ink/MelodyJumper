@@ -7,6 +7,9 @@ var current_pos = 2
 var player_positions
 var min_pos
 var max_pos
+
+var has_shield := false : set = _set_has_shield
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 
 var SC_shot = preload("res://shot.tscn")
@@ -57,3 +60,24 @@ func _shot_natural():
 	new_shot.global_position.y = pos
 	
 	add_child(new_shot)
+	
+func _set_has_shield(value : bool):
+	has_shield = value
+	$Player_Area2D/Sprite2D.visible = value
+	$Player_Area2D/Sprite2D2.visible = value
+	$Player_Area2D/Sprite2D3.visible = value
+
+func _on_player_area_2d_area_entered(area: Area2D) -> void:
+	var collider = area.get_parent()
+	if (collider is Fermata):
+		has_shield = true
+	elif (collider is Note):
+		if (has_shield):
+			has_shield = false
+		else:
+			_gameover()
+
+
+func _gameover():
+	print("perdu")
+	queue_free()

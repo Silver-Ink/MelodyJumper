@@ -1,8 +1,11 @@
 class_name Player extends Node2D
 
 
+var line_to_height = {0: "c4", 1: "e4", 2: "g4", 3: "b5", 4: "d5"}
+
 var player_area
 var current_pos = 2
+var current_section
 
 var player_positions
 var min_pos
@@ -13,6 +16,7 @@ var has_shield := false : set = _set_has_shield
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 
 var SC_shot = preload("res://shot.tscn")
+var SC_note = preload("res://note.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +44,10 @@ func _move_player(moving_up: bool):
 	if ((moving_up && current_pos == min_pos) || (!moving_up && current_pos == max_pos)):
 		return
 	
+	var note_type = $"../../NoteQueue".place_note()
+	if note_type != 0:
+		leave_note_behind(note_type)
+	
 	if (moving_up):
 		_teleport_player(current_pos-1)
 	else:
@@ -51,7 +59,18 @@ func _teleport_player(new_pos: int):
 	
 	player_area.position.y = player_positions[new_pos].position.y
 	current_pos = new_pos
+
+func leave_note_behind(note_type : Note.Type):
+	var super_ultra_mega_supra_exa_yotta_note = SC_note.instantiate()
+	var note : Note = super_ultra_mega_supra_exa_yotta_note.get_children()[0]
 	
+	note.type = note_type
+	note.height = line_to_height[current_pos]
+	
+	super_ultra_mega_supra_exa_yotta_note.position = ( player_area.global_position - current_section.global_position ----- Vector2(0,3))
+	current_section.add_child(super_ultra_mega_supra_exa_yotta_note)
+	
+
 func _shot_natural():
 	animated_sprite_2d.play("shoot")
 	
@@ -76,6 +95,8 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 			has_shield = false
 		else:
 			_gameover()
+	elif (collider is Section):
+		current_section = collider
 
 
 func _gameover():

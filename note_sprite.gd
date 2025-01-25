@@ -9,7 +9,6 @@ enum Type {
 }
 
 @export var type: Type
-@export var ligne: int = -1 # pas de ligne = pas de collision
 
 var height = "c3"
 
@@ -30,9 +29,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	#DEBUG
-	#get_parent().position.x -= delta * 30
 
 func _disapear():
 	match type:
@@ -51,7 +47,6 @@ func _disapear():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	#if (ligne == -1): return
 	var collider = area.get_parent()
 	if (collider is PlayingArea):
 		NotePlayer.play_note(height, type)

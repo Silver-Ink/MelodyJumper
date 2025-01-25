@@ -1,7 +1,7 @@
 extends Node2D
 
 const _visible_queue_size = 3
-const _queue_size = 10
+const _queue_size = 100
 
 const _next_note_cooldown = 1.0
 
@@ -14,9 +14,9 @@ var current_note = 0
 var next_note : Sprite2D
 var queue_positions
 
-var SC_note = preload("res://note.tscn")
+var can_use_note = true
 
-var i = 0
+var SC_note = preload("res://note.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,9 +33,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	i+=1
-	if (i % 200 == 0):
-		place_note()
 	pass
 
 func regenerate_queue():
@@ -71,9 +68,10 @@ func _update_queue_ui():
 		i+=1
 
 func place_note() -> Note.Type :
-	if queue.size() == 0:
+	if (queue.size() == 0 or not can_use_note):
 		return 0
 	
+	can_use_note = false
 	next_note.modulate = Color.RED # placeholder for anim
 	
 	# Freeing next note sprite and keeping its value for return
@@ -81,11 +79,12 @@ func place_note() -> Note.Type :
 	var note_type = note_to_remove.get_children()[0].type
 	note_to_remove.queue_free()
 	
-	await get_tree().create_timer(_next_note_cooldown).timeout
-	
-	next_note.modulate = Color.WHITE
-	
-	_update_queue_ui()
+	get_tree().create_timer(_next_note_cooldown).timeout.connect(_on_timer_finished)
 	
 	return note_type
 	
+func _on_timer_finished():
+	next_note.modulate = Color.WHITE
+	
+	_update_queue_ui()
+	can_use_note = true

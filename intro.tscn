@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bfj761a456qdl"]
+[gd_scene load_steps=36 format=3 uid="uid://c8dqr1ko41ni7"]
 
 [ext_resource type="Texture2D" uid="uid://rrvw3y7u36fn" path="res://assets/intro/MelodyJumper intro sprite sheet.png" id="1_1r1o5"]
 [ext_resource type="AudioStream" uid="uid://de8y2ik6igoo8" path="res://assets/intro/jingle.mp3" id="2_mmnx8"]

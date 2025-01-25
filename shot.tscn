@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc3m83mfd82j4"]
+[gd_scene load_steps=8 format=3 uid="uid://qcqx4vmxaldu"]
 
 [ext_resource type="Script" path="res://shot.gd" id="1_k2aca"]
 [ext_resource type="Texture2D" uid="uid://bndgjvq27amw0" path="res://assets/sprites/animations/Bécarre Statique avec aura blanche.png" id="2_sftme"]

@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://djhnrcgotvde4"]
+[gd_scene load_steps=8 format=3 uid="uid://dslvfv7ry2kaw"]
 
-[ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
-[ext_resource type="PackedScene" uid="uid://ctc4es6p1afov" path="res://playing_area.tscn" id="2_ry1st"]
-[ext_resource type="PackedScene" uid="uid://bqqoiasgaecv" path="res://player.tscn" id="3_youjp"]
+[ext_resource type="PackedScene" path="res://track.tscn" id="1_kd5to"]
+[ext_resource type="PackedScene" path="res://playing_area.tscn" id="2_ry1st"]
+[ext_resource type="PackedScene" uid="uid://46fadsteltg8" path="res://player.tscn" id="3_youjp"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
 [ext_resource type="Texture2D" uid="uid://b8jp0iiacjt68" path="res://assets/sprites/line.png" id="6_8u8q2"]
-[ext_resource type="PackedScene" uid="uid://bnix8h5gbftq" path="res://note.tscn" id="7_6hd68"]
-[ext_resource type="PackedScene" uid="uid://bv53h8xq26cqg" path="res://fermata.tscn" id="7_xcaax"]
+[ext_resource type="PackedScene" uid="uid://ds1sntqk5jvug" path="res://note.tscn" id="7_6hd68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwo8r"]
 size = Vector2(40, 161)
@@ -38,15 +37,6 @@ shape = SubResource("RectangleShape2D_mwo8r")
 [node name="Note" parent="." instance=ExtResource("7_6hd68")]
 position = Vector2(0, -3)
 
-[node name="Note2" parent="." instance=ExtResource("7_6hd68")]
-position = Vector2(23, -3)
-
-[node name="Note3" parent="." instance=ExtResource("7_6hd68")]
-position = Vector2(48, -3)
-
 [node name="Line" type="Sprite2D" parent="."]
 position = Vector2(-77, 0)
 texture = ExtResource("6_8u8q2")
-
-[node name="Fermata" parent="." instance=ExtResource("7_xcaax")]
-position = Vector2(15, 19)

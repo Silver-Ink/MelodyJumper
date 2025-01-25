@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djet42gdxbaxl"
-path="res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"
+uid="uid://xtqh5iso8etu"
+path="res://.godot/imported/point orge.png-2cf1ef99e91addf946fedf17e6433a43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pause.png"
-dest_files=["res://.godot/imported/pause.png-34372193a2d451b0d4c9bda63569c2b9.ctex"]
+source_file="res://assets/sprites/point orge.png"
+dest_files=["res://.godot/imported/point orge.png-2cf1ef99e91addf946fedf17e6433a43.ctex"]
 
 [params]
 

@@ -31,6 +31,7 @@ var level : Level
 
 var SC_shot = preload("res://shot.tscn")
 var SC_note = preload("res://note.tscn")
+var SC_fermata = preload("res://fermata.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -94,13 +95,22 @@ func _set_player_position(new_pos: int):
 	t_position_timer = 0.
 
 func leave_note_behind(note_type : Note.Type):
+	if note_type == 32: # HACK for fermata
+		var scene_fermata = SC_fermata.instantiate()
+		
+		scene_fermata.move_activated = true
+		scene_fermata.position = ( player_area.global_position - current_section.global_position - Vector2(0,3))
+		current_section.add_child(scene_fermata)
+		return
+		
+		
 	var super_ultra_mega_supra_exa_yotta_note = SC_note.instantiate()
 	var note : Note = super_ultra_mega_supra_exa_yotta_note.get_children()[0]
 
 	note.type = note_type
 	note.height = NotePlayer.line_to_height[current_pos]
 
-	super_ultra_mega_supra_exa_yotta_note.position = ( player_area.global_position - current_section.global_position ----- Vector2(0,3))
+	super_ultra_mega_supra_exa_yotta_note.position = ( player_area.global_position - current_section.global_position - Vector2(0,3))
 	current_section.add_child(super_ultra_mega_supra_exa_yotta_note)
 
 
@@ -129,7 +139,8 @@ func _set_has_shield(value : bool):
 func _on_player_area_2d_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent()
 	if (collider is Fermata):
-		has_shield = true
+		if (collider.has_collision):
+			has_shield = true
 	elif (collider is Note):	
 		if (collider.has_collision):
 			if (has_shield):

@@ -1,7 +1,7 @@
 extends Node2D
 
 const _visible_queue_size = 3
-const _queue_size = 12
+const _queue_size = 10
 
 const _next_note_cooldown = 1.0
 
@@ -17,6 +17,7 @@ var queue_positions
 var can_use_note = true
 
 var SC_note = preload("res://note.tscn")
+var SC_fermata = preload("res://fermata.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,6 +56,14 @@ func regenerate_queue():
 		note_scene.position = Vector2(-10000, -10000)
 		queue.append(note_scene)
 		add_child.call_deferred(note_scene)
+	
+	if (randi() % 3 == 0):
+		var fermata_scene = SC_fermata.instantiate()
+		fermata_scene.position = Vector2(-10000, -10000)
+		
+		var random_place = randi() % (queue.size()-2)
+		queue.insert(random_place, fermata_scene)
+		add_child.call_deferred(fermata_scene)
 
 func _empty_queue():
 	for node in queue:
@@ -80,9 +89,13 @@ func place_note():
 	next_note.modulate = Color.RED # placeholder for anim
 	
 	# Freeing next note sprite and keeping its value for return
-	var note_to_remove = queue.pop_front()
-	var note_type = note_to_remove.get_children()[0].type
-	note_to_remove.queue_free()
+	var elem_to_remove = queue.pop_front()
+	var note_type
+	if elem_to_remove.get_children()[0] is Note:
+		note_type = elem_to_remove.get_children()[0].type
+	else:
+		note_type = 32 # HACK for fermata
+	elem_to_remove.queue_free()
 	
 	get_tree().create_timer(_next_note_cooldown).timeout.connect(_on_timer_finished)
 	

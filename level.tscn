@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://djhnrcgotvde4"]
+[gd_scene load_steps=10 format=3 uid="uid://dslvfv7ry2kaw"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_jr6dl"]
-[ext_resource type="PackedScene" uid="uid://bbqglccf55snx" path="res://track.tscn" id="1_kd5to"]
+[ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
 [ext_resource type="PackedScene" uid="uid://ctc4es6p1afov" path="res://playing_area.tscn" id="2_ry1st"]
 [ext_resource type="PackedScene" uid="uid://46fadsteltg8" path="res://player.tscn" id="3_youjp"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
@@ -17,7 +17,7 @@ script = ExtResource("1_jr6dl")
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
 position = Vector2(-32, 10)
-length = 20
+length = 15
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
 

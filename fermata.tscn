@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv53h8xq26cqg"]
+[gd_scene load_steps=14 format=3 uid="uid://cpwiy1dblil7t"]
 
 [ext_resource type="Script" path="res://fermata.gd" id="1_m8kc4"]
 [ext_resource type="Texture2D" uid="uid://xtqh5iso8etu" path="res://assets/sprites/point orge.png" id="3_8ydjm"]

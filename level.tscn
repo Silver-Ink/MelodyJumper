@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dslvfv7ry2kaw"]
+[gd_scene load_steps=10 format=3 uid="uid://djhnrcgotvde4"]
 
-[ext_resource type="PackedScene" uid="uid://vxs8e3miw3q" path="res://track.tscn" id="1_kd5to"]
+[ext_resource type="Script" path="res://level.gd" id="1_jr6dl"]
+[ext_resource type="PackedScene" uid="uid://bbqglccf55snx" path="res://track.tscn" id="1_kd5to"]
 [ext_resource type="PackedScene" uid="uid://ctc4es6p1afov" path="res://playing_area.tscn" id="2_ry1st"]
 [ext_resource type="PackedScene" uid="uid://46fadsteltg8" path="res://player.tscn" id="3_youjp"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
@@ -12,18 +13,24 @@
 size = Vector2(40, 161)
 
 [node name="level" type="Node2D"]
+script = ExtResource("1_jr6dl")
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
+position = Vector2(0, 10)
 length = 20
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
 
 [node name="PlayingArea" parent="." instance=ExtResource("2_ry1st")]
-position = Vector2(-77, 0)
+position = Vector2(-77, 10)
 
 [node name="Player" parent="PlayingArea" instance=ExtResource("3_youjp")]
 
+[node name="Line" type="Sprite2D" parent="PlayingArea"]
+texture = ExtResource("6_8u8q2")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -16)
 zoom = Vector2(6, 6)
 
 [node name="ResetArea" type="Area2D" parent="."]
@@ -35,20 +42,16 @@ script = ExtResource("5_tramo")
 position = Vector2(-298, 0.5)
 shape = SubResource("RectangleShape2D_mwo8r")
 
-[node name="Line" type="Sprite2D" parent="."]
-position = Vector2(-77, 0)
-texture = ExtResource("6_8u8q2")
-
 [node name="NoteQueue" parent="." instance=ExtResource("7_pwarf")]
-position = Vector2(-145, -74)
+position = Vector2(-49, -76)
 
 [node name="ShotSlot1" type="Sprite2D" parent="."]
-position = Vector2(110, 70)
+position = Vector2(105, 65)
 scale = Vector2(2, 2)
 texture = ExtResource("7_85om2")
 
 [node name="ShotSlot2" type="Sprite2D" parent="."]
-position = Vector2(139, 70)
+position = Vector2(134, 65)
 scale = Vector2(2, 2)
 texture = ExtResource("7_85om2")
 

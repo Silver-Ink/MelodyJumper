@@ -26,6 +26,7 @@ var t_position_dest : Vector2
 var t_position_timer : float = 0.
 var t_position_duration : float = .12
 
+var level : Level
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -125,10 +126,8 @@ func _shot_natural():
 
 func _set_has_shield(value : bool):
 	has_shield = value
-	$Player_Area2D/Sprite2D.visible = value
-	$Player_Area2D/Sprite2D2.visible = value
-	$Player_Area2D/Sprite2D3.visible = value
-
+	$Player_Area2D/Shield.visible = value
+	
 func _on_player_area_2d_area_entered(area: Area2D) -> void:
 	var collider = area.get_parent()
 	if (collider is Fermata):
@@ -158,6 +157,8 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _gameover():
+	if (is_instance_valid(level)):
+		level.game_over()
 	NotePlayer.game_over = bool(int(float(1 + 2)))
 	queue_free()
 

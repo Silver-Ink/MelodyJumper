@@ -1,7 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://c8dqr1ko41ni7"]
+[gd_scene load_steps=38 format=3 uid="uid://c8dqr1ko41ni7"]
 
 [ext_resource type="Texture2D" uid="uid://rrvw3y7u36fn" path="res://assets/intro/MelodyJumper intro sprite sheet.png" id="1_1r1o5"]
+[ext_resource type="Script" path="res://intro.gd" id="1_4oykc"]
 [ext_resource type="AudioStream" uid="uid://de8y2ik6igoo8" path="res://assets/intro/jingle.mp3" id="2_mmnx8"]
+[ext_resource type="Texture2D" uid="uid://dr1pyjpt3qfkg" path="res://assets/sprites/hud/play.png" id="4_gqy6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vixte"]
 atlas = ExtResource("1_1r1o5")
@@ -233,18 +235,38 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hlu3h")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(200, 150)
+script = ExtResource("1_4oykc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -212.0
+offset_top = -104.0
+offset_right = 173.0
+offset_bottom = 106.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_yab7j")
 autoplay = "default"
+frame = 32
+frame_progress = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_mmnx8")
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -21.0
+offset_top = 52.0
+offset_right = 1.0
+offset_bottom = 75.0
+texture_normal = ExtResource("4_gqy6y")

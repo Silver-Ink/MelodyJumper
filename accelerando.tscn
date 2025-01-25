@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk7jkxdqcs3bq"]
+
+[ext_resource type="Script" path="res://accelerando.gd" id="1_38v61"]
+[ext_resource type="Texture2D" uid="uid://r81qffvlabip" path="res://assets/sprites/accel.png" id="2_vldfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7qjy"]
+
+[node name="Accelerando" type="Node2D"]
+script = ExtResource("1_38v61")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vldfo")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_u7qjy")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

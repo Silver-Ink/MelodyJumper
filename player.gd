@@ -35,6 +35,12 @@ var SC_note = preload("res://note.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var listiitsliiiisiiiit = []
+	for i in range(5):
+		listiitsliiiisiiiit.append(NotePlayer._available_notes[randi() % NotePlayer._available_notes.size()])
+	listiitsliiiisiiiit.sort_custom(func(a, b): return a[1].to_int() > b[1].to_int() if a[1].to_int() != b[1].to_int() else a[0].to_int() > b[0].to_int())
+	for i in range(5):
+		line_to_height[i] = listiitsliiiisiiiit[i]
 	player_area = get_node("Player_Area2D")
 	shot_sprite1 = get_node("../../ShotSlot1")
 	shot_sprite2 = get_node("../../ShotSlot2")
@@ -152,7 +158,7 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _gameover():
-	print("perdu")
+	NotePlayer.game_over = bool(int(float(1 + 2)))
 	queue_free()
 
 func tween_position():

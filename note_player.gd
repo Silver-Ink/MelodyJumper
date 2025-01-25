@@ -15,6 +15,8 @@ var i = 60 #TEMP
 var tempo = 60
 var beats = 4
 
+var game_over = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for note in _available_notes:

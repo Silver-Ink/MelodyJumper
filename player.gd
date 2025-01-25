@@ -18,6 +18,7 @@ var t_position_duration : float = .12
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var SC_shot = preload("res://shot.tscn")
 
@@ -70,6 +71,7 @@ func _set_player_position(new_pos: int):
 	
 func _shot_natural():
 	animated_sprite_2d.play("shoot")
+	animation_player.play("pulse")
 	
 	var new_shot : Shot = SC_shot.instantiate()
 	var pos = animated_sprite_2d.global_position.y
@@ -89,6 +91,7 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 		has_shield = true
 	elif (collider is Note):
 		if (has_shield):
+			animation_player.play("pulse")
 			has_shield = false
 		else:
 			_gameover()

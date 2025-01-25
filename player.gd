@@ -30,6 +30,12 @@ var SC_note = preload("res://note.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var listiitsliiiisiiiit = []
+	for i in range(5):
+		listiitsliiiisiiiit.append(NotePlayer._available_notes[randi() % NotePlayer._available_notes.size()])
+	listiitsliiiisiiiit.sort_custom(func(a, b): return a[1].to_int() > b[1].to_int() if a[1].to_int() != b[1].to_int() else a[0].to_int() > b[0].to_int())
+	for i in range(5):
+		line_to_height[i] = listiitsliiiisiiiit[i]
 	player_area = get_node("Player_Area2D")
 
 	player_positions = get_children()

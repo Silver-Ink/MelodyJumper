@@ -1,7 +1,7 @@
 extends Node2D
 
 const _visible_queue_size = 3
-const _queue_size = 100
+const _queue_size = 12
 
 const _next_note_cooldown = 1.0
 
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	pass
 
 func regenerate_queue():
-	queue = []
+	_empty_queue()
 	current_note = 0
 	
 	for i in range(_queue_size):
@@ -54,8 +54,13 @@ func regenerate_queue():
 		
 		note_scene.position = Vector2(-10000, -10000)
 		queue.append(note_scene)
-		add_child(note_scene)
+		add_child.call_deferred(note_scene)
 
+func _empty_queue():
+	for node in queue:
+		node.queue_free()
+	queue = []
+	
 func _update_queue_ui():
 	if queue.size() == 0:
 		return
@@ -88,3 +93,9 @@ func _on_timer_finished():
 	
 	_update_queue_ui()
 	can_use_note = true
+
+
+func _on_player_has_looped(loop_number: int) -> void:
+	if (loop_number != 0):
+		regenerate_queue()
+		_update_queue_ui()

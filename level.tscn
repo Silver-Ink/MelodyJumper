@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://46fadsteltg8" path="res://player.tscn" id="3_youjp"]
 [ext_resource type="Script" path="res://reset_area.gd" id="5_tramo"]
 [ext_resource type="Texture2D" uid="uid://b8jp0iiacjt68" path="res://assets/sprites/line.png" id="6_8u8q2"]
+[ext_resource type="Texture2D" uid="uid://ds3kd0gmdsg6q" path="res://assets/sprites/becarre.png" id="7_85om2"]
 [ext_resource type="PackedScene" uid="uid://00eh2tjvvlc" path="res://note_waiting_queue.tscn" id="7_pwarf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwo8r"]
@@ -15,8 +16,7 @@ size = Vector2(40, 161)
 script = ExtResource("1_jr6dl")
 
 [node name="Track" parent="." instance=ExtResource("1_kd5to")]
-position = Vector2(0, 10)
-length = 10
+length = 20
 
 [node name="Marker2D" type="Marker2D" parent="Track"]
 
@@ -43,3 +43,15 @@ shape = SubResource("RectangleShape2D_mwo8r")
 
 [node name="NoteQueue" parent="." instance=ExtResource("7_pwarf")]
 position = Vector2(-49, -76)
+
+[node name="ShotSlot1" type="Sprite2D" parent="."]
+position = Vector2(110, 70)
+scale = Vector2(2, 2)
+texture = ExtResource("7_85om2")
+
+[node name="ShotSlot2" type="Sprite2D" parent="."]
+position = Vector2(139, 70)
+scale = Vector2(2, 2)
+texture = ExtResource("7_85om2")
+
+[connection signal="has_looped" from="PlayingArea/Player" to="NoteQueue" method="_on_player_has_looped"]

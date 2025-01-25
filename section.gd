@@ -1,5 +1,7 @@
 class_name Section extends Node2D
 
+var is_first = false
+
 var speed := 100
 var reset_position : int
 
@@ -10,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x -= speed * delta
+	position.x -= (float(speed * NotePlayer.tempo) / 60) * delta
 
 
 func replace_to_end():

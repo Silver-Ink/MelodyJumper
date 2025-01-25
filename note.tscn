@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ds1sntqk5jvug"]
+[gd_scene load_steps=74 format=3 uid="uid://bnix8h5gbftq"]
 
 [ext_resource type="Texture2D" uid="uid://c6k1amgij5nxx" path="res://assets/sprites/blanche.png" id="1_4pgx8"]
 [ext_resource type="Script" path="res://note_sprite.gd" id="1_cv88p"]
@@ -486,7 +486,6 @@ radius = 0.0181818
 [node name="Note" type="Node2D"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_g80tu")
 animation = &"double_croche_disp"
 frame = 4

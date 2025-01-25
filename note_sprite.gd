@@ -50,8 +50,6 @@ func _disapear():
 			play("double_croche_disp")
 	animation_finished.connect(queue_free)
 
-
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if not has_collision:
 		return
@@ -60,7 +58,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (collider is PlayingArea):
 		NotePlayer.play_note(height, type)
 	elif (collider is Shot):
-		NotePlayer.play_note(height, type)
+		var audio_player := AudioStreamPlayer2D.new()
+		audio_player.stream = load("res://assets/samples/P-36-SoftTp-A.wav")
+		audio_player.play()
 		_disapear()
 		$Area2D.queue_free()
 	elif(collider is Player):

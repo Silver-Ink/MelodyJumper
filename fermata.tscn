@@ -92,5 +92,7 @@ shape = SubResource("RectangleShape2D_38b5g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8edl2")
 animation = &"shine"
+frame = 6
+frame_progress = 1.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

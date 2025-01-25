@@ -19,6 +19,7 @@ var t_position_dest : Vector2
 var t_position_timer : float = 0.
 var t_position_duration : float = .12
 
+var level : Level
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Player_Area2D/AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -117,7 +118,8 @@ func _on_player_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _gameover():
-	print("perdu")
+	if (is_instance_valid(level)):
+		level.game_over()
 	queue_free()
 
 func tween_position():

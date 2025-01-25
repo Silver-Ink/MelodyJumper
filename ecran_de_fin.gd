@@ -1,5 +1,6 @@
-extends Node2D
+extends CanvasLayer
 
+var level : Level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_retry_button_down() -> void:
-	pass # Replace with function body.
+
+
+func _on_retry_button_up() -> void:
+	level.resart_game()

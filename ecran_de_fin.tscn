@@ -4,30 +4,46 @@
 [ext_resource type="Script" path="res://ecran_de_fin.gd" id="1_73xaj"]
 [ext_resource type="Texture2D" uid="uid://06u87tsjg4t0" path="res://assets/sprites/retry.png" id="2_jpwea"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(20, -4)
+[node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_73xaj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(140, 95)
-zoom = Vector2(6, 6)
-
-[node name="YouDied" type="Sprite2D" parent="."]
-position = Vector2(146, 80)
-texture = ExtResource("1_1eurl")
-
-[node name="Retry" type="TextureButton" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 137.0
-offset_top = 91.0
-offset_right = 153.0
-offset_bottom = 107.0
+offset_left = -321.0
+offset_top = -158.5
+offset_right = 321.0
+offset_bottom = 294.5
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.341176)
+
+[node name="YouDied" type="Sprite2D" parent="ColorRect"]
+position = Vector2(321, 90.5)
+scale = Vector2(6, 6)
+texture = ExtResource("1_1eurl")
+
+[node name="Retry" type="TextureButton" parent="ColorRect"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 7.0
+offset_right = -34.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
 texture_normal = ExtResource("2_jpwea")
 
-[connection signal="button_down" from="Retry" to="." method="_on_retry_button_down"]
+[node name="Camera2D" type="Camera2D" parent="ColorRect"]
+position = Vector2(325, 280.5)
+
+[connection signal="button_up" from="ColorRect/Retry" to="." method="_on_retry_button_up"]

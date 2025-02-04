@@ -13,7 +13,5 @@ func _process(delta: float) -> void:
 		_on_retry_button_up()
 
 
-
-
 func _on_retry_button_up() -> void:
-	level.resart_game()
+	level.restart_game()

@@ -6,7 +6,7 @@ var SC_fin = preload("res://ecran_de_fin.tscn")
 func _ready():
 	$PlayingArea/Player.level = self
 
-func resart_game():
+func restart_game():
 	var new_level = SC_level.instantiate()
 	get_tree().root.add_child.call_deferred(new_level)
 	queue_free.call_deferred()

@@ -33,10 +33,6 @@ func _ready() -> void:
 	_update_queue_ui()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func regenerate_queue():
 	_empty_queue()
 	current_note = 0

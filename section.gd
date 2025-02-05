@@ -13,7 +13,8 @@ func _ready() -> void:
 	for i in range(number_of_notes_gerenated):
 		var super_new_note: Node2D = SC_note.instantiate()
 		var new_note: Note = super_new_note.get_children()[0]
-		new_note.type = 2**(randi() % 5)
+		
+		new_note.type = 2**(randi() % 5) as Note.Type
 		var line: int = 4 - (randi() % 5)
 		new_note.height = NotePlayer.line_to_height[line]
 		line += 1
@@ -29,10 +30,8 @@ func _process(delta: float) -> void:
 
 func replace_to_end():
 	position.x += reset_position
-	
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	var collisionner = area.get_parent()
 	if (area is ResetArea):
 		replace_to_end()

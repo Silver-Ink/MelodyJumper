@@ -19,7 +19,7 @@ func on_intro_finished():
 	start_button.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (Input.is_action_just_released("ui_accept") or start):
 		var new_level = SC_level.instantiate()
 		get_tree().root.add_child.call_deferred(new_level)

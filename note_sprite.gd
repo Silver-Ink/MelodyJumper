@@ -1,6 +1,7 @@
 class_name Note extends AnimatedSprite2D
 
 enum Type {
+	NULLNote = 0,
 	Ronde = 1,
 	Blanche = 2,
 	Noire = 4,
@@ -8,7 +9,7 @@ enum Type {
 	DoubleCroche = 16
 }
 
-@export var type: Type
+@export var type: Type = Type.NULLNote
 
 var height = "c3"
 
@@ -30,7 +31,7 @@ func _ready() -> void:
 			play("double_croche_idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (frames > 10):
 		has_collision = true
 	else:

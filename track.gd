@@ -9,13 +9,6 @@ func _ready() -> void:
 	instanciate_sections()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-		
-
-
-
 func instanciate_sections():
 	var example_section : Section = SC_section.instantiate()
 	var shape : CollisionShape2D = example_section.get_node("Area2D/CollisionShape2D")
@@ -42,7 +35,7 @@ func instanciate_sections():
 		
 		var offset = i * width + width / 2.
 		section.position.x += offset
-		section.reset_position = length * width # + width / 2.
+		section.reset_position = int(length * width)
 
 		if (i == 0):
 			section.is_first = true

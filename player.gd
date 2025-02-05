@@ -38,12 +38,12 @@ var SC_fermata = preload("res://fermata.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var listiitsliiiisiiiit = []
+	var random_notes = []
 	for i in range(5):
-		listiitsliiiisiiiit.append(NotePlayer._available_notes[randi() % NotePlayer._available_notes.size()])
-	listiitsliiiisiiiit.sort_custom(func(a, b): return a[1].to_int() > b[1].to_int() if a[1].to_int() != b[1].to_int() else a[0] > b[0])
+		random_notes.append(NotePlayer._available_notes[randi() % NotePlayer._available_notes.size()])
+	random_notes.sort_custom(func(a, b): return a[1].to_int() > b[1].to_int() if a[1].to_int() != b[1].to_int() else a[0] > b[0])
 	for i in range(5):
-		NotePlayer.line_to_height[i] = listiitsliiiisiiiit[i]
+		NotePlayer.line_to_height[i] = random_notes[i]
 	player_area = get_node("Player_Area2D")
 	shot_sprite1 = get_node("../../ShotSlot1")
 	shot_sprite2 = get_node("../../ShotSlot2")
@@ -91,7 +91,7 @@ func _move_player(moving_up: bool):
 	
 	if (is_instance_valid(current_section)):
 		var note_type = $"../../NoteQueue".place_note()
-		if (note_type != 0):
+		if (note_type != Note.Type.NULLNote):
 			leave_note_behind(note_type)
 
 	if (moving_up):
@@ -113,7 +113,7 @@ func leave_note_behind(note_type : Note.Type):
 	if note_type == 32: # HACK for fermata
 		var scene_fermata = SC_fermata.instantiate()
 		
-		scene_fermata.move_activated = true
+		scene_fermata.floating_activated = true
 		scene_fermata.position = ( player_area.global_position - current_section.global_position - Vector2(0,3))
 		current_section.add_child(scene_fermata)
 		return

@@ -13,7 +13,6 @@ enum Type {
 
 var height = "c3"
 
-var frames = 0
 var has_collision = false
 
 # Called when the node enters the scene tree for the first time.
@@ -30,14 +29,7 @@ func _ready() -> void:
 		Type.DoubleCroche:
 			play("double_croche_idle")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if (frames > 10):
-		has_collision = true
-	else:
-		frames+=1
-
-func _disapear():
+func _disappear():
 	match type:
 		Type.Ronde:
 			play("ronde_disp")
@@ -59,9 +51,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (collider is Shot or NotePlayer.game_over):
 		var audio_player := AudioStreamPlayer2D.new()
 		add_child(audio_player)
-		audio_player.stream = load("res://assets/samples/P-36-SoftTp-A.wav")
+		audio_player.stream = load("res://assets/samples/trumpet.wav")
 		audio_player.play()
-		_disapear()
+		_disappear()
 		$Area2D.queue_free()
 	elif (collider is PlayingArea):
 		NotePlayer.play_note(height, type)

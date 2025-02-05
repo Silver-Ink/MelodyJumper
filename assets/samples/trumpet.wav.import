@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dhqkjeuoom5pk"
-path="res://.godot/imported/P-36-SoftTp-A.wav-e59c943e5f0132b66190f8c6f8aa84e0.sample"
+path="res://.godot/imported/trumpet.wav-06134c4714bbd21477b1c25b9e219e18.sample"
 
 [deps]
 
-source_file="res://assets/samples/P-36-SoftTp-A.wav"
-dest_files=["res://.godot/imported/P-36-SoftTp-A.wav-e59c943e5f0132b66190f8c6f8aa84e0.sample"]
+source_file="res://assets/samples/trumpet.wav"
+dest_files=["res://.godot/imported/trumpet.wav-06134c4714bbd21477b1c25b9e219e18.sample"]
 
 [params]
 

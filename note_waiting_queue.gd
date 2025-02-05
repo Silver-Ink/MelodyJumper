@@ -78,9 +78,9 @@ func _update_queue_ui():
 		queue[i+1].position = queue_positions[i].position
 		i+=1
 
-func place_note():
+func place_note() -> Note.Type:
 	if (queue.size() == 0 or not can_use_note):
-		return 0
+		return Note.Type.NULLNote
 
 	can_use_note = false
 	next_note.modulate = Color.RED # placeholder for anim

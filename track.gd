@@ -6,10 +6,10 @@ var SC_section = preload("res://section.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	instanciate_sections()
+	instantiate_sections()
 
 
-func instanciate_sections():
+func instantiate_sections():
 	var example_section : Section = SC_section.instantiate()
 	var shape : CollisionShape2D = example_section.get_node("Area2D/CollisionShape2D")
 	var rect : RectangleShape2D
@@ -17,14 +17,14 @@ func instanciate_sections():
 	
 	var origin : Marker2D = get_node("Marker2D")
 	if (!is_instance_valid(origin)):
-		printerr("erreur, pas de marker2d en enfant de la track !")
+		printerr("Erreur: pas de marker2d en enfant de la track !")
 	
 	if (!is_instance_valid(shape)):
-		printerr("erreur lecture de la node collisionshape")
+		printerr("Erreur: lecture de la node collisionshape")
 		
 	rect = shape.shape
 	if (!is_instance_valid(rect)):
-		printerr("erreur accès de la RectangleShape")
+		printerr("Erreur: accès de la RectangleShape")
 	width = rect.size.x
 	
 	for i in range(length):
@@ -47,4 +47,3 @@ func instanciate_sections():
 			section.add_child(sprite)
 		
 	example_section.queue_free()
-	

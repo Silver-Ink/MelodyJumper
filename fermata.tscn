@@ -81,13 +81,14 @@ z_index = 4
 script = ExtResource("1_m8kc4")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -2)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_38b5g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_8edl2")
 animation = &"shine"

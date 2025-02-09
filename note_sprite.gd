@@ -58,4 +58,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif (collider is PlayingArea):
 		NotePlayer.play_note(height, type)
 	elif(collider is Player):
-		queue_free()
+		get_parent().queue_free()

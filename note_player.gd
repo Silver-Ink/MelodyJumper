@@ -8,7 +8,11 @@ const _initial_tempo: float = 60.0
 
 const _available_notes = ["a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "b0", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "e1", "e2", "e3", "e4", "e5", "e6", "e7", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "g1", "g2", "g3", "g4", "g5", "g6", "g7"]
 
-var accel_ref: Timer
+const _accel_slowdown_threshold := 25
+const _accel_stop_threshold := 50
+
+var _accel_ref: Timer
+var _accel_count := 0
 
 var _available_notes_dict = {}
 
@@ -32,10 +36,10 @@ func init():
 	tempo = _initial_tempo
 	
 	# Stop and destroy timer object if it was created in the previous run
-	if (accel_ref):
-		accel_ref.stop()
-		accel_ref.queue_free()
-		accel_ref = null
+	if (_accel_ref):
+		_accel_ref.stop()
+		_accel_ref.queue_free()
+		_accel_ref = null
 
 # Loads preemptively the sound file for a note
 func _add_note_as_available(note_type: String):
@@ -76,13 +80,20 @@ func _tempo_2_note_time(note_type: Note.Type) -> float:
 
 # Starts the 
 func accelerando():
-	accel_ref = Timer.new()
-	add_child(accel_ref)
+	_accel_ref = Timer.new()
+	add_child(_accel_ref)
 	
-	accel_ref.wait_time = beats
-	accel_ref.connect("timeout", _on_timer_accelerando)
+	_accel_ref.wait_time = beats
+	_accel_ref.connect("timeout", _on_timer_accelerando)
 	
-	accel_ref.start()
+	_accel_ref.start()
 
 func _on_timer_accelerando():
-	tempo += 2
+	_accel_count += 1
+	
+	if _accel_count > _accel_stop_threshold:
+		_accel_ref.stop()
+	elif _accel_count > _accel_slowdown_threshold:
+		tempo += 1
+	else:
+		tempo += 2

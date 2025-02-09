@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc3m83mfd82j4"]
+[gd_scene load_steps=9 format=3 uid="uid://cc3m83mfd82j4"]
 
 [ext_resource type="Script" path="res://shot.gd" id="1_k2aca"]
 [ext_resource type="Texture2D" uid="uid://bndgjvq27amw0" path="res://assets/sprites/animations/Bécarre Statique avec aura blanche.png" id="2_sftme"]
+[ext_resource type="Texture2D" uid="uid://4rfeqw3grr7y" path="res://assets/sprites/becarre_disappearing.png" id="3_mbcjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iqfh"]
 size = Vector2(12, 8)
@@ -33,6 +34,14 @@ animations = [{
 "loop": true,
 "name": &"becarre_aura",
 "speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mbcjx")
+}],
+"loop": true,
+"name": &"becarre_disappear",
+"speed": 5.0
 }]
 
 [node name="shot" type="Node2D"]
@@ -48,7 +57,6 @@ shape = SubResource("RectangleShape2D_4iqfh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_foyqn")
-animation = &"becarre_aura"
-frame_progress = 0.919175
+animation = &"becarre_disappear"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
